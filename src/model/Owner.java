@@ -14,9 +14,24 @@ public class Owner {
         this.contactNumber = contactNumber;
     }
 
-    // Getters and setters for all fields - dustin add these
+    // Getters and setters for all fields 
+    public String getName() {
+		return name;
+	}
 
-    @Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getContactNumber() {
+		return contactNumber;
+	}
+
+	public void setContactNumber(String contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+
+	@Override
     public String toString() {
         return "Owner{" +
                 "name='" + name + '\'' +
