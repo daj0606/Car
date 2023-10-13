@@ -8,13 +8,35 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+@Entity
+@Table()//figure out table name and database config??
 public class Car {
+	// set variables
+	@Id
+	@GeneratedValue
+	@Column(name="ID")
+	private int id;
+	@Column(name="MAKE")
     private String make;
+	@Column(name="MODEL")
     private String model;
+	@Column(name="YEAR")
     private int year;
+	@Column(name="COLOR")
     private String color;
+	@Column(name="MILEAGE")
     private double mileage;
+	@Column(name="PRICE")
     private double price;
+	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
     private List<Owner> owners;
 
     public Car(String make, String model, int year, String color, double mileage, double price) {
