@@ -17,7 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
-@Table()//figure out table name and database config??
+@Table(name="carcatalog")//figure out table name and database config??
 public class Car {
 	// set variables
 	@Id
@@ -38,6 +38,10 @@ public class Car {
     private double price;
 	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
     private List<Owner> owners;
+	
+	public Car() {
+		super();
+	}
 
     public Car(String make, String model, int year, String color, double mileage, double price) {
         this.make = make;
@@ -49,13 +53,69 @@ public class Car {
         this.owners = new ArrayList<>();
     }
 
-    // Getters and setters for all fields -- dustin add these
+    // Getters and setters for all fields
 
     public void addOwner(Owner owner) {
         owners.add(owner);
     }
+    
+    public String getMake() {
+		return make;
+	}
 
-    @Override
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public double getMileage() {
+		return mileage;
+	}
+
+	public void setMileage(double mileage) {
+		this.mileage = mileage;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public List<Owner> getOwners() {
+		return owners;
+	}
+
+	public void setOwners(List<Owner> owners) {
+		this.owners = owners;
+	}
+
+	@Override
     public String toString() {
         return "Car{" +
                 "make='" + make + '\'' +
