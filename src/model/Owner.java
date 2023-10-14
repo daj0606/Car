@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table()// database and table name
+@Table(name="owner")// database and table name
 public class Owner {
 
 	@Id
@@ -28,7 +28,25 @@ public class Owner {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Owner(String name, String contactNumber) {
+		super();
+		this.name = name;
+		this.contactNumber = contactNumber;
+	}
+	
+	public Owner(int id, String name, String contactNumber) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.contactNumber = contactNumber;
+	}
+	
+	public String returnOwnerDetails() {
+		return this.name + ":" + this.contactNumber;
+	}
 
+	// Getters and setters for all fields 
 	public int getId() {
 		return id;
 	}
@@ -53,51 +71,11 @@ public class Owner {
 		this.contactNumber = contactNumber;
 	}
 
-
-    public Owner(String name, String contactNumber) {
-        this.name = name;
-        this.contactNumber = contactNumber;
-    }
-
- HEAD
-    // Getters and setters for all fields 
-    public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getContactNumber() {
-		return contactNumber;
-	}
-
-	public void setContactNumber(String contactNumber) {
-
-
-
-    public Owner(int id, String name, String contactNumber) {
-		super();
-		this.id = id;
-		this.name = name;
- 4ebdaddade5ac3aa0f0b8779c0b19f93090bfba7
-		this.contactNumber = contactNumber;
-	}
-
 	@Override
- HEAD
-    public String toString() {
-        return "Owner{" +
-                "name='" + name + '\'' +
-                ", contactNumber='" + contactNumber + '\'' +
-                '}';
-    }
-
 	public String toString() {
 		return "Owner [id=" + id + ", name=" + name + ", contactNumber=" + contactNumber + "]";
 	}
 
 	
- 4ebdaddade5ac3aa0f0b8779c0b19f93090bfba7
+ 
 }

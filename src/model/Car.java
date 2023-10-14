@@ -17,7 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
-@Table()//figure out table name and database config??
+@Table(name="carcatalog")//figure out table name and database config??
 public class Car {
 	// set variables
 	@Id
@@ -38,6 +38,10 @@ public class Car {
     private double price;
 	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
     private List<Owner> owners;
+	
+	public Car() {
+		super();
+	}
 
     public Car(String make, String model, int year, String color, double mileage, double price) {
         this.make = make;
