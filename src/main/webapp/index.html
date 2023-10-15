@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Game Ranks Home</title>
+<style>
+body {
+	font-size: 40px;
+}
+p {
+	display: inline;
+}
+input[type="submit"] {
+	pointer: cursor;
+	height: 30px;
+	width: 150px;
+	box-shadow: 0px 0px 5px 1px red;
+	position: relative;
+	top: -8px;
+}
+input[type="submit"]:hover {
+	box-shadow: 0px 0px 5px 1px green;
+}
+input[type="text"] {
+	height: 25px;
+	width: 200px;
+	position: relative;
+	top: -8px;
+}
+</style>
+</head>
+<body>
+	<p>Home - </p>
+	<p><a href = "viewAllItemsServlet">View all ranks</a></p>
+	<form action = "addItemServlet" method="post">
+	Game: <input type ="text" name = "game">
+	Rank: <input type = "text" name = "rank">
+	<input type = "submit" value="Add Item">
+	</form> <br />
+</body>
+</html>
